@@ -15,7 +15,7 @@ My dotfiles! Hooray!
     ln -s ~/Projects/DotFiles/vimrc ~/.vimrc  
 ```
 
-### Who do I talk to? ###
+### Notes ###
 
-* I used [Solarized](http://ethanschoonover.com/solarized) for the theme.
+* I used [Solarized](http://ethanschoonover.com/solarized) for the vim theme.
 * Email me linuxdave@gmail.com
