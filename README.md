@@ -1,6 +1,8 @@
 # README #
 
-My dotfiles! Hooray!
+My dotfiles! Hooray! 
+
+Some custom stuff for Java, Python, JavaScript, nodejs, etc. 
 
 ### What is this repository for? ###
 
@@ -9,6 +11,10 @@ My dotfiles! Hooray!
 ### How do I get set up? ###
 
 * Backup any existing dotfiles you're replacing.
+* Clone this repository: 
+```
+    git clone https://github.com/linuxdave/dotfiles
+```
 * Replace with symlinks:   
 ```
     ln -s ~/Projects/DotFiles/vim/ ~/.vim  
