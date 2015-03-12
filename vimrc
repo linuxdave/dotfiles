@@ -6,7 +6,7 @@ colorscheme solarized
 
 filetype indent plugin on
 
-set number
+"set number
 set ruler
 set autoindent
 set hlsearch 	" Highlight Searches
@@ -16,7 +16,7 @@ set ignorecase
 set smartcase 
 
 set visualbell
-set colorcolumn=80
+"set colorcolumn=80
 
 " Python stuff...
 set tabstop=8
@@ -26,6 +26,10 @@ set shiftwidth=4
 
 set history=800
 set undolevels=800
+
+" Setting ejs (express js template files ) to highlight like html 
+au BufNewFile,BufRead *.ejs set filetype=html
+
 
 " Template stuff... 
 "augroup templates
