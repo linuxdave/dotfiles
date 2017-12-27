@@ -12,7 +12,7 @@ The vimrc file is what I use to make Python development pleasurable in VIM
 
 * Backup any existing dotfiles you're replacing.
 * Make sure your VIM is at least version 7.3 with python support
-* Install vundle first:
+* Install vundle first (optional):
 ```
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
@@ -25,7 +25,7 @@ The vimrc file is what I use to make Python development pleasurable in VIM
     ln -s /path/to/dotfiles/vimrc ~/.vimrc
     ln -s /path/to/dotfiles/tmux.conf ~/.tmux.conf  
 ```
-* Open VIM and run
+* Open VIM and run (optional - if using Plugins)
 ```
     :PluginInstall
 ```
@@ -33,7 +33,6 @@ The vimrc file is what I use to make Python development pleasurable in VIM
 
 ### Notes ###
 
-* I used [Solarized](http://ethanschoonover.com/solarized) for the vim theme.
 * If you're using tmux, don't forget to add this line to your ~/.tmux.conf:
 ```
     set -g default-terminal "screen-256color"
