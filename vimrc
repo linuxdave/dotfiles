@@ -1,70 +1,46 @@
-" DON'T FORGET to run :PluginInstall
-" Vundle stuff:
-set nocompatible              " required
-filetype off                  " required
+" Dave's .vimrc
+" Lots of good ideas found here: https://dougblack.io/words/a-good-vimrc.html
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+runtime! debian.vim " from /etc/vim/vimrc file 
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if has("syntax")
+  syntax on
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Loving badwolf theme right now:
+" 1) make your ~/.vimrc
+" 2) mkdir ~/.vim/colors
+" 3) cd ~/.vim/colors
+" 4) wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
+"set background=dark
+colorscheme badwolf " see above ^^
 
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'altercation/vim-colors-solarized'
+" Dave's TAB config - good for bash, python, etc
+set tabstop=4       " number of visual spaces a tab looks like
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
 
+" Uncomment the following to have Vim load indentation rules and plugins
+" according to the detected filetype.
+"if has("autocmd")
+"  filetype plugin indent on
+"endif
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+set showcmd     " Show (partial) command in status line.
+set showmatch       " Show matching brackets.
+set ignorecase      " Do case insensitive matching
+set cursorline      " cursor line
+set hlsearch        " highlight matches
+"set number     " show line numbers
+"set smartcase      " Do smart case matching
+"set incsearch      " Incremental search
+"set autowrite      " Automatically save before commands like :next and :make
+"set hidden     " Hide buffers when they are abandoned
+"set mouse=a        " Enable mouse usage (all modes)
 
-
-syntax enable
-" Required for PuTTY/KiTTY
-set t_Co=256
-" Light or dark... my preference is dark
-set background=dark
-" Required for PuTTY/KiTTY
-let g:solarized_termcolors=256
-
-colorscheme solarized
-
-" Encoding:
-set encoding=utf-8
-
-" Line numbers: 
-set number 	
-" Start searching upon typing
-set incsearch
-" Highlight search result
-set hlsearch
-
-" Enable Folding
-set foldmethod=indent
-set foldlevel=99
-" Enable folding with spacebar (instead of annoying za)
-nnoremap <space> za
-
-
-
-
-" PEP8 for Python
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
-
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-
-
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
